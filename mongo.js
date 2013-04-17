@@ -1,9 +1,9 @@
-exports.hook_queue = function (next, connection) {
-    // MongoDB configuration settings.                                                                                                                             
-    var databaseUrl = "localhost";
-    var collections = ["email"];
-    var db          = require("mongojs").connect(databaseUrl, collections);
+// MongoDB configuration settings.                                                                                                                             
+var databaseUrl = "localhost";
+var collections = ["email"];
+var db          = require("mongojs").connect(databaseUrl, collections);
 
+exports.hook_queue = function (next, connection) {
     // basic logging so we can see if we have an email hitting the stack                                                                                           
     this.loginfo("New inbound email detected, inserting into mongodb");
 
